@@ -5,7 +5,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     let password = document.getElementById('password').value;
 
     // Dati di esempio (in una versione avanzata, usa un database)
-    if (username === "admin" && password === "password123") {
+    if (username === "Diana" && password === "trisko.10") {
         localStorage.setItem('adminLoggedIn', 'true');
         window.location.href = "admin-panel.html";
     } else {
