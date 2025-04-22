@@ -2,18 +2,20 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Login Amministratore</title>
+    <title>Pannello Admin</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <h2>Login Amministratore</h2>
-    <form id="login-form">
-        <label for="username">Username:</label>
-        <input type="text" id="username" required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" required>
-        <button type="submit">Accedi</button>
-    </form>
-    <script src="admin.js"></script>
+    <h2>Modifica del Sito</h2>
+
+    <h3>Modifica diretta del testo:</h3>
+    <div contenteditable="true" id="modifica-creature">
+        <p>Questa è la sezione delle creature! Clicca qui per modificarla.</p>
+    </div>
+
+    <button id="save-content">Salva Modifiche</button>
+    <button id="logout">Esci</button>
+
+    <script src="admin-panel.js"></script>
 </body>
 </html>
