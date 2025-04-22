@@ -2,17 +2,17 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personaggi del Mondo Fantastico</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Personaggi del Mondo Fantastico</h1>
-    <ul>
-        <li>Re Eldoran - Sovrano della Valle Dorata</li>
-        <li>Sylvia - Maga della Luna</li>
-        <li>Kael - Cavaliere Ombra</li>
-        <li>Aria - Guardiana della Foresta</li>
-    </ul>
+    <p id="personaggi-list">Caricamento personaggi...</p>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('personaggi-list').textContent = localStorage.getItem('personaggiContent') || "Nessun personaggio aggiunto.";
+        });
+    </script>
 </body>
 </html>
