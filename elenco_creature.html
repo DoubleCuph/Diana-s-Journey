@@ -2,28 +2,43 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dettagli delle Creature</title>
+    <title>Elenco Creature</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Dettagli delle Creature</h1>
+    <h1>Elenco delle Creature</h1>
     <table border="1">
         <tr>
             <th>Nome</th>
             <th>Descrizione</th>
             <th>Habitat</th>
         </tr>
-        <tr>
-            <td>Drago di Fuoco</td>
-            <td>Un enorme drago con squame infuocate.</td>
-            <td>Vulcani e caverne</td>
-        </tr>
-        <tr>
-            <td>Fenice Dorata</td>
-            <td>Uccello mitico che rinasce dalle sue ceneri.</td>
-            <td>Foreste magiche</td>
-        </tr>
+        <tbody id="creature-table">
+            <!-- Qui verranno inserite le creature -->
+        </tbody>
     </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let creatureData = localStorage.getItem('creatureContent') || "[]"; // Recupera i dati salvati
+            let creatureArray = JSON.parse(creatureData); // Converte i dati in un array
+
+            let tableBody = document.getElementById('creature-table');
+            tableBody.innerHTML = ""; // Pulisce la tabella
+            
+            if (creatureArray.length > 0) {
+                creatureArray.forEach(creature => {
+                    let row = `<tr>
+                        <td>${creature.nome}</td>
+                        <td>${creature.descrizione}</td>
+                        <td>${creature.habitat}</td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+            } else {
+                tableBody.innerHTML = "<tr><td colspan='3'>Nessuna creatura aggiunta.</td></tr>";
+            }
+        });
+    </script>
 </body>
 </html>
