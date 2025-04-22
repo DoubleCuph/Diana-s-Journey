@@ -1,17 +1,25 @@
-// Controllo accesso
+// Controllo accesso admin
 if (localStorage.getItem('adminLoggedIn') !== 'true') {
     window.location.href = "admin-login.html";
 }
 
-// Gestione dati
-document.getElementById('save-data').addEventListener('click', function() {
-    let data = document.getElementById('creature-data').value;
-    localStorage.setItem('creatureContent', data);
-    alert("Dati salvati!");
+// Gestione Creature
+document.getElementById('save-creature').addEventListener('click', function() {
+    let creatureContent = document.getElementById('creature-data').value;
+    localStorage.setItem('creatureContent', creatureContent);
+    alert("Creature salvate!");
 });
 
-// Caricamento dati salvati
+// Gestione Personaggi
+document.getElementById('save-personaggi').addEventListener('click', function() {
+    let personaggiContent = document.getElementById('personaggi-data').value;
+    localStorage.setItem('personaggiContent', personaggiContent);
+    alert("Personaggi salvati!");
+});
+
+// Caricare i dati salvati
 document.getElementById('creature-data').value = localStorage.getItem('creatureContent') || "";
+document.getElementById('personaggi-data').value = localStorage.getItem('personaggiContent') || "";
 
 // Logout
 document.getElementById('logout').addEventListener('click', function() {
