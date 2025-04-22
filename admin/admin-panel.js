@@ -12,3 +12,9 @@ document.getElementById('save-data').addEventListener('click', function() {
 
 // Caricamento dati salvati
 document.getElementById('creature-data').value = localStorage.getItem('creatureContent') || "";
+
+// Logout
+document.getElementById('logout').addEventListener('click', function() {
+    localStorage.removeItem('adminLoggedIn');
+    window.location.href = "../index.html"; // Torna alla home
+});
