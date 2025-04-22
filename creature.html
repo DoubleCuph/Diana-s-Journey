@@ -2,17 +2,17 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creature del Mondo Fantastico</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Elenco delle Creature</h1>
-    <ul>
-        <li>Drago di Fuoco</li>
-        <li>Fenice Dorata</li>
-        <li>Grifone delle Montagne</li>
-        <li>Lupo Fantasma</li>
-    </ul>
+    <h1>Creature del Mondo Fantastico</h1>
+    <p id="creature-list">Caricamento creature...</p>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('creature-list').textContent = localStorage.getItem('creatureContent') || "Nessuna creatura aggiunta.";
+        });
+    </script>
 </body>
 </html>
