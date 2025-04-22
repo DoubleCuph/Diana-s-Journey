@@ -13,6 +13,7 @@ body {
     background: #222;
     color: white;
     transition: left 0.3s ease;
+    z-index: 1000; /* Per evitare sovrapposizioni */
 }
 
 .menu ul {
@@ -29,6 +30,10 @@ body {
     text-decoration: none;
 }
 
+.menu ul li a:hover {
+    color: #ffcc00;
+}
+
 .menu-toggle {
     position: fixed;
     top: 10px;
@@ -37,4 +42,5 @@ body {
     border: none;
     font-size: 24px;
     cursor: pointer;
+    border-radius: 5px;
 }
