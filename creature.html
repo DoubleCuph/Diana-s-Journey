@@ -7,11 +7,12 @@
 </head>
 <body>
     <h1>Creature del Mondo Fantastico</h1>
-    <p id="creature-list">Caricamento creature...</p>
+    <div id="creature-content">Caricamento...</div>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('creature-list').textContent = localStorage.getItem('creatureContent') || "Nessuna creatura aggiunta.";
+            document.getElementById('creature-content').innerHTML = localStorage.getItem('creatureContent') || 
+            "<p>Questa è la sezione delle creature.</p>";
         });
     </script>
 </body>
